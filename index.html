@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DP Catering</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #97866ac5;
+      font-family: sans-serif;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 5%;
+      height: 18vh;
+      background-color: #d2a080;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .title {
+      font-size: 40px;
+      color: #735557;
+    }
+
+    .nav {
+      display: flex;
+      gap: 2rem;
+    }
+
+    nav h2 {
+      color: whitesmoke;
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    #text {
+      position: absolute;
+      color: whitesmoke;
+      text-shadow: 2px 2px 15px #d2a080;
+      right: 30%;
+      top: 60%;
+      font-weight: 500;
+      font-size: 3rem;
+      font-style: oblique;
+      text-align: center;
+    }
+
+    .main img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .About {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin: 3%;
+    }
+
+    .About img {
+      width: 100%;
+      height: auto;
+      margin: 5%;
+      border-radius: 10px;
+    }
+
+    .about {
+      padding: 1rem;
+    }
+
+    .about h1 {
+      color: #efefef;
+      font-size: 2rem;
+    }
+
+    .about p {
+      font-style: italic;
+      font-size: 1rem;
+      color: #463030;
+    }
+
+    .about h6 {
+      font-size: 1.2rem;
+      color: rgba(255, 217, 1, 0.779);
+    }
+
+    .Menu {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      margin: 5%;
+      gap: 2rem;
+    }
+
+    .Menu img {
+      width: 100%;
+      height: auto;
+      margin-bottom: 1rem;
+      border-radius: 10px;
+    }
+
+    .menu_list {
+      color: antiquewhite;
+    }
+
+    .menu_list h1 {
+      font-size: 2rem;
+    }
+
+    .menu_list h2 {
+      font-size: 1.2rem;
+      color: rgba(255, 217, 1, 0.779);
+    }
+
+    .menu_list p {
+      font-style: italic;
+      font-size: 1rem;
+    }
+
+    #Contact {
+      padding: 2rem;
+      background-color: #735557;
+      color: whitesmoke;
+    }
+
+    #Contact h1 {
+      text-align: center;
+      color: rgba(143, 213, 12, 0.959);
+      text-shadow: 2px 2px 15px black;
+      font-size: 2rem;
+    }
+
+    .form {
+      max-width: 600px;
+      margin: 2rem auto;
+    }
+
+    .form h2 {
+      color: yellow;
+      text-shadow: 2px 2px 10px rgb(224, 55, 55);
+      font-size: 1.2rem;
+    }
+
+    .form label {
+      display: block;
+      margin-top: 1rem;
+      font-size: 1rem;
+    }
+
+    .form input {
+      width: 100%;
+      padding: 0.5rem;
+      font-size: 1rem;
+      margin-top: 0.3rem;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .form button {
+      width: 100%;
+      margin-top: 2rem;
+      padding: 0.7rem;
+      font-size: 1rem;
+      border-radius: 2rem;
+      background-color: #d2a080;
+      color: white;
+      border: none;
+      cursor: pointer;
+      box-shadow: 3px 3px 15px white;
+    }
+
+    @media (max-width: 768px) {
+      #text {
+        font-size: 2rem;
+        right: 10%;
+        top: 50%;
+      }
+
+      nav {
+        flex-direction: column;
+        height: auto;
+        gap: 1rem;
+      }
+
+      .nav {
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .title {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <h2 class="title">DP <br />Catering</h2>
+    <div class="nav">
+      <h2>About</h2>
+      <h2>Menu</h2>
+      <h2>Contact</h2>
+    </div>
+  </nav>
+
+  <h1 id="text">DP Catering</h1>
+
+  <div class="main">
+    <img src="./images/main.jpg" alt="Main Banner" />
+  </div>
+
+  <div class="About">
+    <div>
+      <img src="./images/a2.jpg" alt="About Catering" />
+    </div>
+    <div class="about">
+      <h1>About Catering</h1>
+      <h6>Tradition since 1889</h6>
+      <p>
+        The Catering was founded in blabla by Mr. Smith in lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Duis aute iruredolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. We only
+        use seasonal ingredients.
+      </p>
+    </div>
+  </div>
+
+  <div class="Menu">
+    <div class="menu_list">
+      <h1>Our Menu</h1>
+
+      <h2>Bread Basket</h2>
+      <p>Assortment of fresh baked fruit breads and muffins - ₹5.50</p>
+
+      <h2>Honey Almond Granola with Fruits</h2>
+      <p>Natural cereal with honey toasted oats, raisins, almonds and dates - ₹7.00</p>
+
+      <h2>Belgian Waffle</h2>
+      <p>Vanilla flavored batter with malted flour - ₹7.50</p>
+
+      <h2>Scrambled eggs</h2>
+      <p>With roasted red pepper, garlic, and green onions - ₹7.50</p>
+
+      <h2>Blueberry Pancakes</h2>
+      <p>Served with syrup, butter, and lots of berries - ₹8.50</p>
+    </div>
+
+    <div>
+      <img src="./images/a3.jpg" alt="Dish 1" />
+      <img src="./images/a2.jpg" alt="Dish 2" />
+    </div>
+  </div>
+
+  <div id="Contact">
+    <h1>Start Planning Your Perfect Menu</h1>
+    <div class="form">
+      <h2>Let’s Serve Something Special Together!</h2>
+
+      <label for="name">Name:</label>
+      <input type="text" id="name" />
+
+      <label for="mail">E-Mail:</label>
+      <input type="email" id="mail" />
+
+      <label for="date">Event Date & Time:</label>
+      <input type="date" id="date" />
+
+      <label for="special">Special Requirements:</label>
+      <input type="text" id="special" placeholder="Feel free to describe..." />
+
+      <button onclick="submit()">Submit</button>
+    </div>
+  </div>
+
+  <script>
+    function submit() {
+      alert("Thank you for reaching out! We'll get back to you shortly.");
+    }
+  </script>
+</body>
+</html>
